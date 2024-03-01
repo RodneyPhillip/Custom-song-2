@@ -1,0 +1,120 @@
+use_bpm 120
+use_synth :piano
+
+# VARIABLES TO STORE SAMPLES
+glizzy = "C:/Users/rodney_phillips/Downloads/(free loop) nle choppa shotta flow type sample - glizzy.mp3"
+
+sample glizzy
+sleep 13
+
+live_loop :layer1 do
+  4.times do
+    # Measure 1 & 3
+    play :g4
+    sleep 1
+    play :r
+    sleep 1
+    play :b4
+    sleep 1
+    play :r
+    sleep 1
+    # Measure 2 & 4
+    play :b4
+    sleep 1
+    play :r
+    sleep 1
+    play :g4
+    sleep 1
+    play :r
+    sleep 1
+  end
+  stop
+end
+
+sleep 32
+
+live_loop :layer2 do
+  play :d4
+  sleep 1
+  play :r
+  sleep 1
+  play :a4
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :a4
+  sleep 1
+  play :r
+  sleep 1
+  play :d4
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :d4
+  sleep 1
+  play :r
+  sleep 1
+  play :d4
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :d4
+  sleep 1
+  play :d4
+  sleep 1
+  play :d4
+  sleep 1
+  play :d4
+  sleep 0.5
+  play :d4
+  sleep 0.5
+end
+stop
+
+
+sleep 32
+
+live_loop :layer3 do
+  sample :bd_haus
+  play :d2
+  sleep 1
+  play :r
+  sleep 1
+  play :a2
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :a2
+  sleep 1
+  play :r
+  sleep 1
+  play :d2
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :d2
+  sleep 1
+  play :r
+  sleep 1
+  play :d2
+  sleep 1
+  play :r
+  sleep 1
+  
+  play :d2
+  sleep 1
+  play :d2
+  sleep 1
+  play :d2
+  sleep 1
+  play :d2
+  sleep 0.5
+  play :d2
+  sleep 0.5
+end
+stop
