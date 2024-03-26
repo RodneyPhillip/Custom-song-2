@@ -2,7 +2,7 @@ use_bpm 145
 use_synth :piano
 intro = "C:/Users/rodney_phillips/Documents/Audacity/Kendrick Lamar - HUMBLE. (INSTRUMENTAL).wav"
 lyrics = "C:/Users/rodney_phillips/Documents/Audacity/HUMBLE. - Vocals Only (Acapella)  Kendrick Lamar.wav"
-
+define :eight do |x1, x2, x3, x4, x5, x6, x7, x8|
 
 sample intro
 sleep 4
@@ -27,6 +27,13 @@ live_loop :piano do
 end
 
 sleep 16
+
+live_loop :main_theme do
+   eight :c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2
+   eight :c3, :e3, :g3, :b3, :c4, :b3, :g3, :e3
+   eight :c4, :e4, :g4, :b4, :c5, :b4, :g4, :e4
+   eight :c5, :e5, :g5, :b5, :c6, :b5, :g5, :e5
+end
 
 live_loop :samps do
   sample intro
