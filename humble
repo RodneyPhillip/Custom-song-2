@@ -1,41 +1,67 @@
+# Welcome to Sonic Pi
+
 use_bpm 145
 use_synth :piano
 intro = "C:/Users/rodney_phillips/Documents/Audacity/Kendrick Lamar - HUMBLE. (INSTRUMENTAL).wav"
 lyrics = "C:/Users/rodney_phillips/Documents/Audacity/HUMBLE. - Vocals Only (Acapella)  Kendrick Lamar.wav"
-define :eight do |x1, x2, x3, x4, x5, x6, x7, x8|
+talking = "C:/Users/rodney_phillips/Documents/Audacity/Kendrick Lamar is Too Humble 💯.wav"
+x = 1
 
+define:humble do |x1,x2,x3|
+  play :f4
+  sleep 1
+  play :f4
+  sleep x1
+  play :fs4
+  sleep 1
+  play :f4
+  sleep 1
+  play :as3
+  sleep x2
+  play :as3
+  sleep 1
+  play :as3
+  sleep x3
+  play :fs4
+  sleep 1
+end
+
+
+sample talking
+sleep 48
 sample intro
-sleep 4
-sample lyrics
 live_loop :piano do
-  play :f4
-  sleep 1
-  play :f4
-  sleep 2
-  play :fs4
-  sleep 1
-  play :f4
-  sleep 1
-  play :as3
-  sleep 0.5
-  play :as3
-  sleep 1
-  play :as3
-  sleep 0.5
-  play :fs4
-  sleep 1
+  8.times do
+    humble 2, 0.5, 0.5 #8-beats total
+  end
+  stop
 end
 
-sleep 16
+sleep 64
 
-live_loop :main_theme do
-   eight :c2, :e2, :g2, :b2, :c3, :b2, :g2, :e2
-   eight :c3, :e3, :g3, :b3, :c4, :b3, :g3, :e3
-   eight :c4, :e4, :g4, :b4, :c5, :b4, :g4, :e4
-   eight :c5, :e5, :g5, :b5, :c6, :b5, :g5, :e5
-end
+sample lyrics
 
-live_loop :samps do
-  sample intro
-  sleep 8
+live_loop:fade do
+  1.times do
+    play :f4,amp: x
+    sleep 1
+    play :f4, amp: x
+    sleep 2
+    x = x - 0.3
+    play :fs4,amp: x
+    sleep 1
+    play :f4,amp: x
+    sleep 1
+    x = x - 0.3
+    play :as3,amp: x
+    sleep 0.5
+    play :as3,amp: x
+    sleep 1
+    x = x - 0.3
+    play :as3,amp: x
+    sleep 0.5
+    play :fs4,amp: x
+    sleep 1
+  end
+  stop
 end
